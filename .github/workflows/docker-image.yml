@@ -35,12 +35,13 @@ jobs:
     - name: Build docker image
       run: |
         docker build --tag jtoroyo/docker-graphql:0.0.2 .
+        docker build --tag jtoroyo/docker-graphql:latest .
 
       # Push de la imagen a docker hub.
     - name: Push docker image
       run: |
         docker push jtoroyo/docker-graphql:0.0.2
-
+        docker push jtoroyo/docker-graphql:latest
         
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
