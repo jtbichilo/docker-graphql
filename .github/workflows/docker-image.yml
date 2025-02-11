@@ -27,7 +27,7 @@ jobs:
         major_pattern: "major:"
         minor_pattern: "feat:"
         # format: "${major}.${minor}.${patch}-prerelease${increment}"
-        format: "${major}.${minor}.${patch}{increment}"
+        format: "${major}.${minor}.${patch}${increment}"
 
       # ID del paso
       id: version_app
