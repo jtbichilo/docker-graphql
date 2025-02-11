@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Cada uno de los guiones es un step/paso/fase
     - name: Checkout code
       uses: actions/checkout@v4
       with:
@@ -29,6 +30,16 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
+
+    # Siguiente paso, construir imagen de docker.
+    - name: Build docker image
+      run: |
+        docker build --tag jtoroyo/docker-graphql:0.0.2 .
+
+      # Push de la imagen a docker hub.
+    - name: Push docker image
+      run: |
+        docker push jtoroyo/docker-graphql:0.0.2 .
 
         
     # - name: Build the Docker image
