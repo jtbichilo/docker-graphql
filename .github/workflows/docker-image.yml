@@ -39,7 +39,7 @@ jobs:
         # Sacamos la version del paso anterior donde generamos la version 
         # con el ID version_app. Para poder acceder a el, utilizamos la constante steps
         # que se refiere a todos los steps, y luego el id del paso/step/fase correspondiente
-        NEW_VERSION: ${{ steps.version_app.output.version }}
+        NEW_VERSION: ${{ steps.version_app.outputs.version }}
         
       # La tuberia (|) significa que cada una de las lineas que 
       # incluyamos se ejecutara de manera independiente
